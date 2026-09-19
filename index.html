@@ -1,11 +1,100 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Ravenware</title>
-  </head>
-  <body>
-    <h1>Ravenware</h1>
-    <p>Website coming soon.</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ravenware – Liquid Glass</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+  <div class="bg-wrap">
+    <div class="soft-noise"></div>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+  <header class="glass-header glass-card">
+    <div class="logo">Ravenware</div>
+                <nav>
+      <ul>
+<li><a class="ripple" href="#s1">Roadmap</a></li>
+<li><a class="ripple" href="#s2">Community & Open Source</a></li>
+<li><a class="ripple" href="#s3">Why Glass?</a></li>
+<li><a class="ripple" href="#s4">Mission</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="ripple" aria-label="Toggle theme">??</button>
+                <button id="settings-btn" class="ripple settings-btn" aria-label="Open settings">??</button>
+    </div>
+  </header>
+  <main>
+    <section class="hero glass-card reveal">
+      <h1>Where Water Meets Light</h1>
+      <p>Crafted with light, blur, and color.</p>
+      <div class="cta-row">
+        <a href="#s1" class="btn primary ripple">Explore</a>
+        <a href="#" class="btn ghost ripple">Learn More</a>
+      </div>
+    </section>
+    <section id="s1" class="content-section reveal glass-card">
+      <div class="section-header">
+        <h2>Roadmap</h2>
+        <button class="minimize-btn ripple" aria-label="Collapse section">-</button>
+      </div>
+      <div class="section-body">
+        <p>Color is a mood. Light is a story. Together they turn space into experience. Color is a mood. Light is a story. Together they turn space into experience.</p>
+      </div>
+    </section>
+    <section id="s2" class="content-section reveal glass-card">
+      <div class="section-header">
+        <h2>Community & Open Source</h2>
+        <button class="minimize-btn ripple" aria-label="Collapse section">-</button>
+      </div>
+      <div class="section-body">
+        <p>Our work pairs aesthetic calm with practical clarity, keeping content always front and center. We cut noise, keep soul, and let pixels whisper instead of shout. We design for everyone: fast, keyboard-friendly, and delightfully accessible.</p>
+      </div>
+    </section>
+    <section id="s3" class="content-section reveal glass-card">
+      <div class="section-header">
+        <h2>Why Glass?</h2>
+        <button class="minimize-btn ripple" aria-label="Collapse section">-</button>
+      </div>
+      <div class="section-body">
+        <p>Surfaces glide, panels float, and transitions flow—so interaction feels natural. Our work pairs aesthetic calm with practical clarity, keeping content always front and center.</p>
+      </div>
+    </section>
+    <section id="s4" class="content-section reveal glass-card">
+      <div class="section-header">
+        <h2>Mission</h2>
+        <button class="minimize-btn ripple" aria-label="Collapse section">-</button>
+      </div>
+      <div class="section-body">
+        <p>Open collaboration powers rapid iteration—beauty grows where ideas can breathe. Surfaces glide, panels float, and transitions flow—so interaction feels natural. We believe interfaces should feel as fluid as water—soft edges, subtle glow, and purposeful motion.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="glass-footer glass-card reveal">
+    <p>© 2025 Ravenware. All rights reserved.</p>
+  </footer>
+  <div id="settings-panel" class="settings-panel glass-card" role="dialog" aria-hidden="true">
+    <div class="settings-head">
+      <h3>Customize Theme</h3>
+      <button id="settings-close" class="ripple" aria-label="Close settings">?</button>
+    </div>
+    <div class="theme-buttons">
+      <button class="theme-choice ripple" data-theme="winter">Winter</button>
+      <button class="theme-choice ripple" data-theme="spring">Spring</button>
+      <button class="theme-choice ripple" data-theme="cyber">Cyber</button>
+      <button class="theme-choice ripple" data-theme="pastel">Pastel</button>
+    </div>
+    <div class="settings-actions">
+      <button id="randomize-theme" class="btn primary ripple">Randomize Selected Theme</button>
+      <button id="save-site" class="btn ghost ripple">Save Current Design</button>
+    </div>
+    <div class="settings-note"><small>Tip: select a theme then randomize to get variations. Hover effects enabled.</small></div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
