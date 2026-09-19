@@ -98,7 +98,6 @@ body{
   padding:14px 20px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
   gap:14px;
   transform:translateX(-50%);
   z-index:1000;
@@ -119,12 +118,19 @@ body{
   text-shadow:0 0 20px var(--glow);
 }
 
+.glass-header nav{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+
 nav ul{
   list-style:none;
   display:flex;
   gap:18px;
   margin:0;
   padding:0;
+  white-space:nowrap;
 }
 
 nav a{
@@ -141,22 +147,6 @@ nav a:hover{
   color:#fff;
   background:var(--accent);
   box-shadow:0 0 0 999px rgba(255,255,255,.08) inset;
-}
-
-.header-actions{
-  display:flex;
-  gap:8px;
-  align-items:center;
-}
-
-.settings-btn{
-  background:none;
-  border:none;
-  font-size:1.2rem;
-  cursor:pointer;
-  color:var(--accent);
-  padding:10px 12px;
-  border-radius:12px;
 }
 
 /* ===== Hero ===== */
@@ -295,49 +285,16 @@ nav a:hover{
   }
 }
 
-/* ===== Settings Panel ===== */
-.settings-panel{
-  position:fixed;
-  top:74px;
-  right:20px;
-  width:260px;
-  display:none;
-  flex-direction:column;
-  gap:12px;
-  padding:16px;
-  z-index:999;
-}
-
-.settings-panel.active{
-  display:flex;
-}
-
-.settings-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.settings-head h3{
-  margin:0;
-  color:var(--accent);
-}
-
-.settings-actions{
-  display:flex;
-  width:100%;
-}
-
-.settings-actions .btn{
-  width:100%;
-  text-align:center;
-}
-
 /* ===== Responsive ===== */
 @media(max-width:900px){
   .glass-header{
     flex-wrap:wrap;
     justify-content:center;
+  }
+
+  .glass-header nav{
+    position:static;
+    transform:none;
   }
 
   nav ul{
