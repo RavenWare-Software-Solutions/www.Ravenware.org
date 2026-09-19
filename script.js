@@ -6,6 +6,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
     if(el){
       e.preventDefault();
+
       el.scrollIntoView({
         behavior:'smooth',
         block:'start'
@@ -62,7 +63,9 @@ document.querySelectorAll('.ripple').forEach(el=>{
     this.style.setProperty('--ripple-d',d+'px');
 
     this.classList.remove('active');
+
     void this.offsetWidth;
+
     this.classList.add('active');
   });
 });
@@ -74,62 +77,3 @@ style.textContent=
   '.ripple::after{left:var(--ripple-x);top:var(--ripple-y);width:var(--ripple-d);height:var(--ripple-d);}';
 
 document.head.appendChild(style);
-
-/* ===== Settings / Save ===== */
-
-const settingsBtn=document.getElementById('settings-btn');
-const settingsPanel=document.getElementById('settings-panel');
-const settingsClose=document.getElementById('settings-close');
-
-settingsBtn.addEventListener('click',()=>{
-  settingsPanel.classList.toggle('active');
-
-  settingsPanel.setAttribute(
-    'aria-hidden',
-    !settingsPanel.classList.contains('active')
-  );
-});
-
-settingsClose.addEventListener('click',()=>{
-  settingsPanel.classList.remove('active');
-  settingsPanel.setAttribute('aria-hidden','true');
-});
-
-// Save current site
-document.getElementById('save-site').addEventListener('click',()=>{
-  const html='<!doctype html>\n'+document.documentElement.outerHTML;
-  const css=fetchCSS();
-  const js=fetchJS();
-
-  saveFile('index.html',html);
-  saveFile('style.css',css);
-  saveFile('script.js',js);
-});
-
-function saveFile(name,content){
-  const blob=new Blob([content],{type:'text/plain'});
-  const link=document.createElement('a');
-
-  link.href=URL.createObjectURL(blob);
-  link.download=name;
-
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
-  setTimeout(()=>{
-    URL.revokeObjectURL(link.href);
-  },1000);
-}
-
-function fetchCSS(){
-  const styleEl=Array.from(
-    document.querySelectorAll('style')
-  ).map(s=>s.textContent).join('\n');
-
-  return '/* style.css exported from client. */\n'+styleEl;
-}
-
-function fetchJS(){
-  return '// script.js exported from client. Use the original source for full fidelity.';
-}
