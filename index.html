@@ -1,13 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ravenware</title>
+  <title>RavenWare</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
+
   <div class="bg-wrap">
     <div class="soft-noise"></div>
     <div class="blob b1"></div>
@@ -16,37 +18,125 @@
   </div>
 
   <header class="glass-header glass-card">
-    <div class="logo">RavenWare Software Solutions</div>
+    <div class="logo-wrap">
+      <button class="logo ripple" id="logoButton" type="button">
+        RavenWare
+      </button>
+
+      <div class="raven-menu" id="ravenMenu">
+        <div class="raven-menu-glow"></div>
+
+        <div class="raven-menu-header">
+          <span class="raven-menu-title">RavenWare</span>
+          <span class="raven-menu-subtitle">Software Solutions</span>
+        </div>
+
+        <div class="raven-menu-divider"></div>
+
+        <a href="#s1" class="raven-menu-item">
+          <span class="menu-icon">◆</span>
+          <span>
+            <strong>About RavenWare</strong>
+            <small>Learn about our Projects</small>
+          </span>
+        </a>
+
+        <a href="#s2" class="raven-menu-item">
+          <span class="menu-icon">◇</span>
+          <span>
+            <strong>Mission Statement</strong>
+            <small>Our Goals as a Company</small>
+          </span>
+        </a>
+
+        <a href="#s3" class="raven-menu-item">
+          <span class="menu-icon">◈</span>
+          <span>
+            <strong>Design Philosophy</strong>
+            <small>General Program Design</small>
+          </span>
+        </a>
+
+        <a href="#s4" class="raven-menu-item">
+          <span class="menu-icon">✦</span>
+          <span>
+            <strong>Contact Us</strong>
+            <small>Reach out to the Owner</small>
+          </span>
+        </a>
+      </div>
+    </div>
 
     <nav>
       <ul>
-        <li><a class="ripple" href="#s1">Dev Blog</a></li>
-        <li><a class="ripple" href="#s2">News</a></li>
-        <li><a class="ripple" href="#s3">Support</a></li>
-        <li><a class="ripple" href="#s4">Software Repository</a></li>
+        <li>
+          <a class="nav-button ripple" href="#s4">
+            Software Center Download
+          </a>
+        </li>
+
+        <li>
+          <a class="nav-button ripple popup-trigger" href="#" data-popup="storePopup">
+            Software Store
+          </a>
+        </li>
+
+        <li>
+          <a class="nav-button ripple popup-trigger" href="#" data-popup="devblogPopup">
+            News
+          </a>
+        </li>
+
+
+
+        <li>
+          <a class="nav-button ripple popup-trigger" href="#" data-popup="communityPopup">
+            Community Support
+          </a>
+        </li>
+
+        <li>
+          <a class="nav-button ripple popup-trigger" href="#" data-popup="followPopup">
+            Follow Us
+          </a>
+        </li>
+		
+        <li>
+          <a class="nav-button ripple popup-trigger" href="#" data-popup="donatePopup">
+            Donate
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 
   <main style="padding-top:100px;">
+
     <section class="hero glass-card">
       <h1>WEBSITE UNDER CONSTRUCTION</h1>
       <p>CURRENTLY IN DEMO MODE</p>
 
       <div class="cta-row">
         <a href="#s1" class="btn primary ripple">Explore</a>
-        <a href="#" class="btn ghost ripple">Learn More</a>
+
+        <a href="#" class="btn ghost ripple popup-trigger" data-popup="aboutPopup">
+          Learn More
+        </a>
       </div>
     </section>
 
     <section id="s1" class="content-section glass-card">
       <div class="section-header">
-        <h2>Roadmap</h2>
+        <h2>Recent News</h2>
         <button class="minimize-btn ripple" aria-label="Collapse section">-</button>
       </div>
 
       <div class="section-body">
-        <p>Color is a mood. Light is a story. Together they turn space into experience. Color is a mood. Light is a story. Together they turn space into experience.</p>
+        <p>
+          Color is a mood. Light is a story. Together they turn space into
+          experience. Color is a mood. Light is a story. Together they turn
+          space into experience.
+        </p>
       </div>
     </section>
 
@@ -57,7 +147,12 @@
       </div>
 
       <div class="section-body">
-        <p>Our work pairs aesthetic calm with practical clarity, keeping content always front and center. We cut noise, keep soul, and let pixels whisper instead of shout. We design for everyone: fast, keyboard-friendly, and delightfully accessible.</p>
+        <p>
+          Our work pairs aesthetic calm with practical clarity, keeping
+          content always front and center. We cut noise, keep soul, and let
+          pixels whisper instead of shout. We design for everyone: fast,
+          keyboard-friendly, and delightfully accessible.
+        </p>
       </div>
     </section>
 
@@ -68,7 +163,11 @@
       </div>
 
       <div class="section-body">
-        <p>Surfaces glide, panels float, and transitions flow—so interaction feels natural. Our work pairs aesthetic calm with practical clarity, keeping content always front and center.</p>
+        <p>
+          Surfaces glide, panels float, and transitions flow—so interaction
+          feels natural. Our work pairs aesthetic calm with practical clarity,
+          keeping content always front and center.
+        </p>
       </div>
     </section>
 
@@ -79,14 +178,134 @@
       </div>
 
       <div class="section-body">
-        <p>Open collaboration powers rapid iteration—beauty grows where ideas can breathe. Surfaces glide, panels float, and transitions flow—so interaction feels natural. We believe interfaces should feel as fluid as water—soft edges, subtle glow, and purposeful motion.</p>
+        <p>
+          Open collaboration powers rapid iteration—beauty grows where ideas
+          can breathe. Surfaces glide, panels float, and transitions flow—so
+          interaction feels natural. We believe interfaces should feel as
+          fluid as water—soft edges, subtle glow, and purposeful motion.
+        </p>
       </div>
     </section>
+
   </main>
 
   <footer class="glass-footer glass-card">
-    <p>© 2026 Ravenware. All rights reserved.</p>
+    <p>© 2026 RavenWare Software Solutions. All rights reserved.</p>
   </footer>
+
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" id="popupOverlay" aria-hidden="true">
+
+    <!-- About Popup -->
+    <section class="popup-window about-popup" id="aboutPopup" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <button class="popup-close ripple" type="button" aria-label="Close popup">×</button>
+
+      <h2 id="aboutTitle">About RavenWare</h2>
+
+      <p>
+        RavenWare Software Solutions is focused on creating practical,
+        accessible, and visually refined software experiences.
+      </p>
+
+      <p>
+        This website is currently operating in demo mode while the platform,
+        software catalog, and community features are being developed.
+      </p>
+    </section>
+
+    <!-- Store Popup -->
+    <section class="popup-window store-popup" id="storePopup" role="dialog" aria-modal="true" aria-labelledby="storeTitle">
+      <button class="popup-close ripple" type="button" aria-label="Close popup">×</button>
+
+      <h2 id="storeTitle">RavenWare Store</h2>
+
+      <p>
+        Browse RavenWare software, tools, digital resources, and future
+        products through the official store.
+      </p>
+
+      <p>
+        Store content and product listings will become available as
+        development progresses.
+      </p>
+    </section>
+
+    <!-- DevBlog Popup -->
+    <section class="popup-window devblog-popup" id="devblogPopup" role="dialog" aria-modal="true" aria-labelledby="devblogTitle">
+      <button class="popup-close ripple" type="button" aria-label="Close popup">×</button>
+
+      <h2 id="devblogTitle">RavenWare DevBlog</h2>
+
+      <p>
+        Follow development updates, project progress, technical discoveries,
+        and behind-the-scenes information from RavenWare.
+      </p>
+
+      <p>
+        New development articles and project updates will be published here.
+      </p>
+    </section>
+
+    <!-- Follow Us Popup -->
+    <section class="popup-window follow-popup" id="followPopup" role="dialog" aria-modal="true" aria-labelledby="followTitle">
+      <button class="popup-close ripple" type="button" aria-label="Close popup">×</button>
+
+      <h2 id="followTitle">Follow RavenWare</h2>
+
+      <p>
+        Stay connected with RavenWare through our community channels,
+        development platforms, and social media.
+      </p>
+
+      <p>
+        Official community links will be added as each platform becomes
+        available.
+      </p>
+    </section>
+
+    <!-- Community Support Popup -->
+    <section class="popup-window community-popup" id="communityPopup" role="dialog" aria-modal="true" aria-labelledby="communityTitle">
+      <button class="popup-close ripple" type="button" aria-label="Close popup">×</button>
+
+      <h2 id="communityTitle">RavenWare Community Support</h2>
+
+      <p>
+        The RavenWare community is a place to ask questions, get help with
+        RavenWare software, discuss projects, and connect with other users
+        and developers.
+      </p>
+
+      <p>
+        Community support features, forums, project discussions, and
+        additional resources will become available as the RavenWare
+        platform develops.
+      </p>
+
+      <p>
+        Our goal is to provide a welcoming and useful environment for
+        learning, troubleshooting, collaboration, and open-source
+        development.
+      </p>
+    </section>
+
+    <!-- Donate Popup -->
+    <section class="popup-window donate-popup" id="donatePopup" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+      <button class="popup-close ripple" type="button" aria-label="Close popup">×</button>
+
+      <h2 id="donateTitle">Support RavenWare</h2>
+
+      <p>
+        Donations help support software development, hosting, community
+        services, and future open-source projects.
+      </p>
+
+      <p>
+        Official donation options will be listed here when the support system
+        is ready.
+      </p>
+    </section>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
