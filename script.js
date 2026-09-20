@@ -1,4 +1,3 @@
-
 // Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]:not(.popup-trigger)').forEach(a=>{
   a.addEventListener('click',e=>{
@@ -59,6 +58,7 @@ function openPopup(id){
   popup.classList.add('active');
   popupOverlay.classList.add('open');
   popupOverlay.setAttribute('aria-hidden','false');
+  document.documentElement.classList.add('popup-open');
   document.body.classList.add('popup-open');
 }
 
@@ -70,6 +70,7 @@ function closePopup(){
     window.classList.remove('active');
   });
 
+  document.documentElement.classList.remove('popup-open');
   document.body.classList.remove('popup-open');
 }
 
@@ -79,13 +80,30 @@ document.querySelectorAll('.popup-trigger').forEach(trigger=>{
     e.preventDefault();
     e.stopPropagation();
 
-    openPopup(trigger.dataset.popup);
+    const popupId=trigger.dataset.popup;
+
+    // Do not allow another popup animation to be queued.
+    if(trigger.dataset.popupPending==='true'){
+      return;
+    }
+
+    trigger.dataset.popupPending='true';
+
+    // The ripple animation begins from the normal .ripple click handler.
+    // Wait for it to completely finish before showing the popup.
+    setTimeout(()=>{
+      trigger.dataset.popupPending='false';
+      trigger.classList.remove('active');
+
+      openPopup(popupId);
+    },450);
   });
 });
 
 // Close when clicking the darkened area
 popupOverlay.addEventListener('click',e=>{
   if(e.target===popupOverlay){
+    e.stopPropagation();
     closePopup();
   }
 });
@@ -138,9 +156,14 @@ document.querySelectorAll('.content-section').forEach(sec=>{
   });
 });
 
-// Ripple click animation
+// Original white ripple / pulse click animation
 document.querySelectorAll('.ripple').forEach(el=>{
   el.addEventListener('click',function(e){
+    // Do not create a ripple from the popup's darkened background.
+    if(e.target===popupOverlay){
+      return;
+    }
+
     const rect=this.getBoundingClientRect();
     const d=Math.max(rect.width,rect.height);
     const x=e.clientX-rect.left-d/2;
